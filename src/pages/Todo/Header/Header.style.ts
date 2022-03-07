@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Header = styled.header`
   background: transparent;
-  box-shadow: 0 1px 6px rgb(0 0 0 / 10%);
+  box-shadow: 0 1px 6px rgb(74, 189, 172);
   padding: .5rem;
 `;
 
