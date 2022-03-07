@@ -9,6 +9,10 @@ import InputArea from "./InputArea";
 import ListArea from "./ListArea";
 import InfoArea from "./InfoArea";
 
+// images
+import TodoImage from "./TodoImage";
+
+
 const Todo: React.FC = () => {
   
   const [taskList, setTaskList] = useState<ListItemType[]>([]);
@@ -58,7 +62,7 @@ const Todo: React.FC = () => {
 
 
   return (
-    <>
+    <div style={{position:'relative', minHeight:'100vh'}}>
 
       <Header />
       <InputArea onAddTask={handleAddTask} />
@@ -68,7 +72,9 @@ const Todo: React.FC = () => {
         onTaskChange={handleChangeTask}
         taskList={taskList}
       />
-    </>
+      
+      <TodoImage/>
+    </div>
   );
 };
 

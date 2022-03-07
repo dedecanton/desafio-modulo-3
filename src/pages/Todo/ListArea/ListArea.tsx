@@ -8,6 +8,7 @@ import { ListItemType } from "../../../types/ListItem.type";
 // components
 import Container from "../../../components/Container";
 
+
 type Props = {
   taskList: ListItemType[];
   onTaskChange: (id: string, done: boolean) => void;
@@ -25,6 +26,7 @@ const ListArea = ({ taskList, onTaskChange, onTaskRemove }: Props) => {
 
   const addStylesContainer = `
     margin: 1rem auto;
+    background-color: #fff;
     max-width:  900px;
     width: 95%;
     flex-direction: column;
@@ -33,7 +35,8 @@ const ListArea = ({ taskList, onTaskChange, onTaskRemove }: Props) => {
     border-radius: 0.5rem;
     padding: 1rem;
     text-align:center;
-
+    position: relative;
+    z-index: 999;
     ul{
       width: 100%
     }
