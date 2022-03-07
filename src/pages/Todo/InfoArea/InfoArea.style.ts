@@ -4,7 +4,7 @@ import ContainerStyle from "../UI/Container";
 export const Container = styled(ContainerStyle)`
   max-width: 300px;
   width: 80%;
-  background-color: black;
+  background-color: #4abdac;
   color: white;
   padding: 1rem;
   border-radius: .5rem;
