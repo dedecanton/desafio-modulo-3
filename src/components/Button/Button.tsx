@@ -4,7 +4,7 @@ import * as React from "react";
 import { ButtonElement } from "./Button.style";
 
 type ButtonType = {
-  type?: "submit";
+  type?: "submit" | 'button';
   text: string;
   addStyle ?: string;
   color ?: string;
@@ -15,7 +15,7 @@ type ButtonType = {
 
 const Button = (props: ButtonType): any => {
   return (
-    <ButtonElement onClick={props.onClick} {...props} type={props.type || "button"}>
+    <ButtonElement {...props} onClick={props.onClick} type={props.type || "button"}>
       {props.text}
     </ButtonElement>
   );
