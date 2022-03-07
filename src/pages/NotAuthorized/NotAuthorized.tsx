@@ -5,7 +5,7 @@ import Container from "../../components/Container";
 import { Title } from "./NotAuthorized.style";
 
 // images
-import NotAuthorizedImage from "./NotAuthorizedImage";
+import NotAuthorizedImage from "./NotAuthorizedImage/";
 
 const NotAuthorized: React.FC = () => {
   return (
