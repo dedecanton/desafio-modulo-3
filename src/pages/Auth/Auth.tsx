@@ -51,7 +51,7 @@ const Auth: React.FC = () => {
             <Label htmlFor="password">Senha</Label>
             <Input placeholder="Insira sua senha" id="password" type="password" value={userPassword} onChange={ (e)=> setUserPassword(e.target.value) }/>
           </InputGroup>
-          <Button text="Entrar" type="submit" />
+          <Button width="10rem" text="Entrar" type="submit" />
         </Form>
       </InputArea>
     </Container>
