@@ -9,11 +9,13 @@ type ButtonType = {
   addStyle ?: string;
   color ?: string;
   backgroundColor ?: string;
+  onClick ?: () => void;
+  width ?: string;
 };
 
 const Button = (props: ButtonType): any => {
   return (
-    <ButtonElement {...props} type={props.type || "button"}>
+    <ButtonElement onClick={props.onClick} {...props} type={props.type || "button"}>
       {props.text}
     </ButtonElement>
   );

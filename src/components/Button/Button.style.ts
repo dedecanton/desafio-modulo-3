@@ -4,12 +4,12 @@ type Props = {
   addStyle ?:string
   color ?: string;
   backgroundColor ?: string;
+  width ?: string
 };
 
 export const ButtonElement = styled.button<Props>`
-  
   padding: 1rem;
-  width: 10rem;
+  width: ${props => props.width || ''};
   outline: none;
   border: 2px solid ${props => props.color || '#4abdac'};
   background-color: ${props => props.backgroundColor || '#fff' };
