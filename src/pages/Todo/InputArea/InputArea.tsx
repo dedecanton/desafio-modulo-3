@@ -31,6 +31,7 @@ const InputArea = ({ onAddTask }: Props) => {
   const addStylesContainer = `
   flex-direction: column;
     margin: 1rem auto;
+    margin-top: 6rem;
     max-width: 900px;
     justify-content: center;
 
