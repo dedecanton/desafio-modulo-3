@@ -1,13 +1,12 @@
 /* eslint-disable  @typescript-eslint/explicit-module-boundary-types */
 
 import React, { KeyboardEvent, useState } from "react";
-import * as C from "./InputArea.style";
-// import Button from "../UI/Button";
-
 
 // components
 import Button from "../../../components/Button";
 import Input from '../../../components/Input'
+import Container from '../../../components/Container'
+
 
 type Props = {
   onAddTask: (text: string) => void;
@@ -30,8 +29,19 @@ const InputArea = ({ onAddTask }: Props) => {
     }
   };
 
+  const addStylesContainer = `
+  flex-direction: column;
+    margin: 1rem auto;
+    max-width: 900px;
+    justify-content: center;
+
+    @media (min-width: 980px) {
+      flex-direction: row;
+    }
+  `
+
   return (
-    <C.Container>
+    <Container addStyle={addStylesContainer}>
       <Input
         addStyles="border: 2px solid #4abdac;"
         type="text"
@@ -41,7 +51,7 @@ const InputArea = ({ onAddTask }: Props) => {
         onKeyPress={handleKeyUp}
       />
       <Button addStyle="margin-left: 1rem; padding: .9rem;" type="button" onClick={handleSubmit}  text="Adicionar" />
-    </C.Container>
+    </Container>
   );
 };
 
