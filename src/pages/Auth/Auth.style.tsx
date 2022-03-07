@@ -11,7 +11,15 @@ export const Container = styled.div`
 export const BackgroundLogin = styled.div`
   width: 40%;
   background-color: #4abdac;
-  height: 100%;
+  /* height: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg{
+    width:80%;
+    height: 100%;
+  }
 `;
 
 export const InputArea = styled.div`

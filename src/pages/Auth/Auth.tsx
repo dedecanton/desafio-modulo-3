@@ -2,6 +2,9 @@ import * as React from "react";
 import { useContext, useState} from "react";
 import { AuthContext } from "../../context/auth-context";
 
+// Images
+import LoginImage from "./LoginImage/LoginImage";
+
 // Components
 import Button from "../../components/Button";
 
@@ -33,7 +36,9 @@ const Auth: React.FC = () => {
 
   return (
     <Container>
-      <BackgroundLogin></BackgroundLogin>
+      <BackgroundLogin>
+        <LoginImage />
+      </BackgroundLogin>
       <InputArea>
         <Title>Quem bom que você voltou!</Title>
         <Form onSubmit={loginHandler}>
