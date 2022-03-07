@@ -3,7 +3,7 @@ import { useContext, useState} from "react";
 import { AuthContext } from "../../context/auth-context";
 
 // Images
-import LoginImage from "./LoginImage/LoginImage";
+import LoginImage from "./LoginImage/";
 
 // Components
 import Button from "../../components/Button";
