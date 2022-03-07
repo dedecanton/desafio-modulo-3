@@ -13,7 +13,7 @@ import Container from "../../components/Container";
 import {
   BackgroundLogin,
   InputArea,
-  Title,/* eslint-disable  @typescript-eslint/no-explicit-any */
+  Title,
   Form,
   InputGroup,
   Label,
