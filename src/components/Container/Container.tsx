@@ -6,7 +6,7 @@ import {ContainerElement} from './Container.style'
 type ContainerProps = {
     height ?: string;
     addStyle ?: string;
-    children: JSX.Element[]
+    children: JSX.Element | JSX.Element[]
 }
 
 const Container = (props:ContainerProps):any => (
