@@ -1,6 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/auth-context";
+import React, { useEffect, useState } from "react";
 
 // Types
 import { ListItemType } from "../../types/ListItem.type";
@@ -12,16 +10,9 @@ import ListArea from "./ListArea";
 import InfoArea from "./InfoArea";
 
 const Todo: React.FC = () => {
-  const authCtx = useContext(AuthContext);
-  const logout = authCtx.logout;
-
+  
   const [taskList, setTaskList] = useState<ListItemType[]>([]);
 
-  const navigate = useNavigate();
-  const logoutHandler = () => {
-    logout();
-    navigate("/auth", { replace: true });
-  };
   useEffect(() => {
     const dataLocalStorage = localStorage.getItem("listTask");
     if (dataLocalStorage !== null) {
@@ -68,8 +59,7 @@ const Todo: React.FC = () => {
 
   return (
     <>
-      <h1>Todo</h1>
-      <button onClick={logoutHandler}>Logout</button>
+
       <Header />
       <InputArea onAddTask={handleAddTask} />
       <InfoArea taskList={taskList} />

@@ -1,17 +1,48 @@
 /* eslint-disable  @typescript-eslint/explicit-module-boundary-types */
 
-import * as React from 'react';
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import * as C from "./Header.style";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faList } from "@fortawesome/free-solid-svg-icons";
+
+// Components
+import Container from "../../../components/Container";
+import Button from "../../../components/Button";
+
+// Context
+import { AuthContext } from "../../../context/auth-context";
+
+const addContainerStyles = `
+align-items: center;
+justify-content: space-between;
+width: 95%;
+
+button{
+  padding .8rem 2rem;
+}
+`;
 
 const Header = () => {
+  const authCtx = useContext(AuthContext);
+  const logout = authCtx.logout;
+
+  const navigate = useNavigate();
+  const logoutHandler = () => {
+    logout();
+    navigate("/auth", { replace: true });
+  };
+
+  <button onClick={logoutHandler}>Logout</button>;
   return (
     <C.Header>
-      <C.Container>
+      <Container addStyle={addContainerStyles}>
         <C.HeaderLogo>To-do List</C.HeaderLogo>
-        {/* <FontAwesomeIcon style={{fontSize:'25px'}} icon={faList} /> */}
-      </C.Container>
+        <Button
+          onClick={logoutHandler}
+          text="Logout"
+          backgroundColor="white"
+          color="#4abdac"
+        />
+      </Container>
     </C.Header>
   );
 };
