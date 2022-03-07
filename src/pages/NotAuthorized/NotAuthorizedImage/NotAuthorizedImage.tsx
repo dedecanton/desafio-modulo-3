@@ -30,7 +30,7 @@ const NotAuthorizedImage = ():any => (
       cx="445.56497"
       cy="200.129"
       r="96.565"
-      fill="#6c63ff"
+      fill="#4abdac"
     />
     <path
       id="a573942c-3bf3-4c43-b474-689725a927f7-291"
@@ -139,7 +139,7 @@ const NotAuthorizedImage = ():any => (
         cx="370.98597"
         cy="370.985"
         r="15.986"
-        fill="#6c63ff"
+        fill="#4abdac"
       />
       <path
         id="ae47602b-fb54-4e88-955d-49b260f35f7f-305"
@@ -156,7 +156,7 @@ const NotAuthorizedImage = ():any => (
         cx="370.98597"
         cy="456.278"
         r="15.986"
-        fill="#6c63ff"
+        fill="#4abdac"
       />
       <path
         id="aaaffa69-7c16-47ec-b12d-87139789d2df-306"
@@ -173,7 +173,7 @@ const NotAuthorizedImage = ():any => (
         cx="370.98597"
         cy="541.53599"
         r="15.986"
-        fill="#6c63ff"
+        fill="#4abdac"
       />
       <path
         id="f69fbb38-8754-494b-94fa-96f6df4fd0e7-307"
