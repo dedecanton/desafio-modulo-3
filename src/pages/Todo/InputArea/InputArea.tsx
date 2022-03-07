@@ -2,7 +2,12 @@
 
 import React, { KeyboardEvent, useState } from "react";
 import * as C from "./InputArea.style";
-import Button from "../UI/Button";
+// import Button from "../UI/Button";
+
+
+// components
+import Button from "../../../components/Button";
+import Input from '../../../components/Input'
 
 type Props = {
   onAddTask: (text: string) => void;
@@ -27,14 +32,15 @@ const InputArea = ({ onAddTask }: Props) => {
 
   return (
     <C.Container>
-      <C.Input
+      <Input
+        addStyles="border: 2px solid #4abdac;"
         type="text"
         placeholder="Descrição da tarefa..."
         value={inputContent}
         onChange={(e) => setInputContent(e.target.value)}
         onKeyPress={handleKeyUp}
       />
-      <Button onClick={handleSubmit} text="Adicionar" />
+      <Button addStyle="margin-left: 1rem; padding: .9rem;" type="button" onClick={handleSubmit}  text="Adicionar" />
     </C.Container>
   );
 };
