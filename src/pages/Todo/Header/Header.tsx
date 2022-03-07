@@ -39,8 +39,8 @@ const Header = () => {
         <Button
           onClick={logoutHandler}
           text="Logout"
-          backgroundColor="white"
-          color="#4abdac"
+          backgroundColor="#4abdac"
+          color="#fff"
         />
       </Container>
     </C.Header>

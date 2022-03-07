@@ -4,9 +4,8 @@ import React, { KeyboardEvent, useState } from "react";
 
 // components
 import Button from "../../../components/Button";
-import Input from '../../../components/Input'
-import Container from '../../../components/Container'
-
+import Input from "../../../components/Input";
+import Container from "../../../components/Container";
 
 type Props = {
   onAddTask: (text: string) => void;
@@ -38,7 +37,7 @@ const InputArea = ({ onAddTask }: Props) => {
     @media (min-width: 980px) {
       flex-direction: row;
     }
-  `
+  `;
 
   return (
     <Container addStyle={addStylesContainer}>
@@ -50,7 +49,14 @@ const InputArea = ({ onAddTask }: Props) => {
         onChange={(e) => setInputContent(e.target.value)}
         onKeyPress={handleKeyUp}
       />
-      <Button addStyle="margin-left: 1rem; padding: .9rem;" type="button" onClick={handleSubmit}  text="Adicionar" />
+      <Button
+        backgroundColor="#4abdac"
+        color="#fff"
+        addStyle="margin-left: 1rem; padding: .9rem;"
+        type="button"
+        onClick={handleSubmit}
+        text="Adicionar"
+      />
     </Container>
   );
 };

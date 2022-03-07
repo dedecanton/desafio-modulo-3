@@ -1,10 +1,12 @@
 /* eslint-disable  @typescript-eslint/explicit-module-boundary-types */
-import * as React from 'react';
-import * as C from "./ListArea.style";
+import * as React from "react";
 import ListItem from "../ListItem";
 
 // types
 import { ListItemType } from "../../../types/ListItem.type";
+
+// components
+import Container from "../../../components/Container";
 
 type Props = {
   taskList: ListItemType[];
@@ -21,8 +23,29 @@ const ListArea = ({ taskList, onTaskChange, onTaskRemove }: Props) => {
     onTaskRemove(id);
   };
 
+  const addStylesContainer = `
+    margin: 1rem auto;
+    max-width:  900px;
+    width: 95%;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #4abdac;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align:center;
+
+    ul{
+      width: 100%
+    }
+
+    h2{
+      color: black;
+      font-size: 1.2rem;
+    }
+  `;
+
   return (
-    <C.Container>
+    <Container addStyle={addStylesContainer}>
       {taskList.length > 0 ? (
         taskList.map((task, index) => (
           <ListItem
@@ -35,7 +58,7 @@ const ListArea = ({ taskList, onTaskChange, onTaskRemove }: Props) => {
       ) : (
         <h2>Nenhuma tarefa cadastrada</h2>
       )}
-    </C.Container>
+    </Container>
   );
 };
 

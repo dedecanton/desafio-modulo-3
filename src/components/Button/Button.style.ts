@@ -23,6 +23,7 @@ export const ButtonElement = styled.button<Props>`
   &:hover {
     background-color: ${props => props.color || '#4abdac'};
     color: ${props => props.backgroundColor || '#fff' };
+    border-color: ${props => props.backgroundColor || '#fff'};
     transform: scale(1.1);
   }
 

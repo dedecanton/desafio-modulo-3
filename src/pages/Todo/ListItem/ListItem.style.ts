@@ -33,12 +33,6 @@ export const Container = styled.li`
     }
 
     // aditional styled button component
-    button{
-        width:100%;
-        padding: .5rem 1rem;
-        margin-top: .5rem;
-
-    }
 
     @media (min-width:980px){
         flex-direction: row;
@@ -55,11 +49,5 @@ export const Container = styled.li`
             text-align: justify;
         }
 
-        button{
-            width: initial;
-            position: absolute;
-            right:2%;
-            margin-top: 0;
-        }
     }
 `
