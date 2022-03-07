@@ -1,13 +1,5 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  margin: 0%;
-  height: 100vh;
-`;
-
 export const BackgroundLogin = styled.div`
   width: 40%;
   background-color: #4abdac;

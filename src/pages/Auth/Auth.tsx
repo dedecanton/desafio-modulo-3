@@ -7,13 +7,13 @@ import LoginImage from "./LoginImage/LoginImage";
 
 // Components
 import Button from "../../components/Button";
+import Container from "../../components/Container";
 
 // style
 import {
   BackgroundLogin,
-  Container,
   InputArea,
-  Title,
+  Title,/* eslint-disable  @typescript-eslint/no-explicit-any */
   Form,
   InputGroup,
   Label,
@@ -35,7 +35,7 @@ const Auth: React.FC = () => {
 
 
   return (
-    <Container>
+    <Container height="100vh">
       <BackgroundLogin>
         <LoginImage />
       </BackgroundLogin>
