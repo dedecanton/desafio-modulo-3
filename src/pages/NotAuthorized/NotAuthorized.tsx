@@ -1,11 +1,31 @@
-import * as React from 'react';
+import * as React from "react";
 
-const NotAuthorized:React.FC = () => {
-    return(
-        <>
-            <h1>Não autorizado</h1>
-        </>
-    )
-} 
+// Components
+import Container from "../../components/Container";
+import { Title } from "./NotAuthorized.style";
 
-export default NotAuthorized
+// images
+import NotAuthorizedImage from "./NotAuthorizedImage/";
+
+const NotAuthorized: React.FC = () => {
+  return (
+    <Container
+      height="100vh"
+      addStyle={`margin:0 auto; 
+      text-align: center;
+      flex-direction: column;
+      background-color: #4abdac;
+      justify-content:center;
+      align-items:center;
+      
+      svg{
+        height:60%;
+      }`}
+    >
+      <Title>Ops! Acesso negado!</Title>
+      <NotAuthorizedImage />
+    </Container>
+  );
+};
+
+export default NotAuthorized;
