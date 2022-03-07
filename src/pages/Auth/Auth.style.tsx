@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const BackgroundLogin = styled.div`
   width: 40%;
   background-color: #4abdac;
-  /* height: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;
