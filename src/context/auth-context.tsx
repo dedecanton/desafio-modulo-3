@@ -57,7 +57,6 @@ const AuthProvider: React.FC = ({ children }) => {
     logout: logoutHandler,
   };
 
-  console.log(userIsLoggedIn);
   return (
     <AuthContext.Provider value={authContextValue}>
       {children}
