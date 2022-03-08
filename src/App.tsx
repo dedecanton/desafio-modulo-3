@@ -4,6 +4,8 @@ import React, { useContext } from "react";
 // context
 import { AuthContext } from "./context/auth-context";
 
+import useApi from "./services/useApi";
+
 // routes
 import {
   AuthenticatedRoutes,
@@ -11,6 +13,11 @@ import {
 } from "./routes/App.routes";
 
 const App: React.FC = () => {
+
+  const {loading, data} = useApi()
+
+  console.log(loading,data)
+
   const authCtx = useContext(AuthContext);
   const isLoggedIn = authCtx.isLoggedIn;
 
