@@ -15,7 +15,7 @@ const addContainerStyles = `
 align-items: center;
 justify-content: space-between;
 width: 95%;
-
+flex-direction: row;
 button{
   padding .8rem 2rem;
 }
