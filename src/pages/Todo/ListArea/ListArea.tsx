@@ -45,6 +45,10 @@ const ListArea = ({ taskList, onTaskChange, onTaskRemove }: Props) => {
       color: black;
       font-size: 1.2rem;
     }
+
+    @media (min-width:980px){
+      flex-direction:column;
+    }
   `;
 
   return (

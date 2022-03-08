@@ -34,17 +34,15 @@ const InputArea = ({ onAddTask }: Props) => {
     margin-top: 6rem;
     max-width: 900px;
     justify-content: center;
-
-    @media (min-width: 980px) {
-      flex-direction: row;
-    }
+    align-items:center;
   `;
 
   return (
     <Container addStyle={addStylesContainer}>
       <Input
-        addStyles="border: 2px solid #4abdac;"
+        addStyles="border: 2px solid #4abdac; margin-bottom: .5rem; @media (min-width:980px){width:70%; margin-bottom: 0}"
         type="text"
+        width="90%"
         placeholder="Descrição da tarefa..."
         value={inputContent}
         onChange={(e) => setInputContent(e.target.value)}
