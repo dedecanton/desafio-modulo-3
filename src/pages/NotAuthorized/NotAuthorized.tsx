@@ -17,12 +17,22 @@ const NotAuthorized: React.FC = () => {
       background-color: #4abdac;
       justify-content:center;
       align-items:center;
-      
+
       svg{
-        height:60%;
-      }`}
+        width:90%;
+        height: auto;
+      }
+      
+      @media (min-width: 980px){
+        flex-direction: column;
+
+        svg{
+          height: 60%;
+        }
+      }
+      `}
     >
-      <Title>Ops! Acesso negado!</Title>
+      <Title>Ops! Acesso&nbsp;negado!</Title>
       <NotAuthorizedImage />
     </Container>
   );
