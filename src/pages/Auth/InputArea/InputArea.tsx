@@ -20,12 +20,10 @@ const InputArea = ({onLogin, onChangeEmail, onChangePassword}:InputAreaProps):an
 
     function changeEmail(){
         onChangeEmail(emailTyped.current?.value || '')
-        console.log(emailTyped.current?.value)
     }
     
     function changePassword(){
         onChangePassword(passwordTyped.current?.value || '')
-        console.log(passwordTyped.current?.value)
     }
 
 
