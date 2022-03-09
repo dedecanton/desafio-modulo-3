@@ -69,6 +69,8 @@
       "!**/node_modules/**",
       "!**/vendor/**"
     ],
-    "testMatch": ["**/tests/**/*.spec.{js,jsx,ts,tsx}"]
+    "testMatch": [
+      "**/tests/**/*.spec.{js,jsx,ts,tsx}"
+    ]
   }
 }
