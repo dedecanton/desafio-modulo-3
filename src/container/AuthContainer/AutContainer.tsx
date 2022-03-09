@@ -7,7 +7,7 @@ import Container from "../../components/Container";
 import LoginImage from "../../pages/Auth/LoginImage";
 import InputArea from "../../pages/Auth/InputArea";
 
-import { BackgroundLogin } from '../../pages/Auth/Auth.style'
+import { BackgroundLogin } from './AuthContainer.style'
 
 const AuthContainer: React.FC = () => {
   const authCtx = useContext(AuthContext);
