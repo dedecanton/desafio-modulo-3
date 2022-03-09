@@ -3,7 +3,7 @@ import * as React from "react";
 
 
 const NotAuthorizedImage = ():any => (
-  <svg
+  <svg data-testid="notAuthImg"
     xmlns="http://www.w3.org/2000/svg"
     data-name="Layer 1"
     width="742.41705"
