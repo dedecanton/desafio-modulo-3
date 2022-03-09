@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Image } from './TodoImage.style';
 
 const TodoImage = ():any => (
-  <Image
+  <Image data-testid="svg"
     xmlns="http://www.w3.org/2000/svg"
     data-name="Layer 1"
     width="848.67538"
