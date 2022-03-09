@@ -1,5 +1,6 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import { useCallback, useEffect, useState } from "react"
+import { ListItemType } from "../types/ListItem.type";
 
 const URL = 'https://62224954666291106a22d82f.mockapi.io/todo'
 
@@ -39,8 +40,31 @@ export default function useApi ():any{
      fetch(`https://62224954666291106a22d82f.mockapi.io/todo/${id}`, {method:'DELETE'})
    }
 
+   const postData = (item: ListItemType) => {
+     fetch('https://62224954666291106a22d82f.mockapi.io/todo/', {
+       method: 'POST',
+       headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json'
+       },
+       body: JSON.stringify(item)
+     })
+   }
+
+   const putData = (item:ListItemType) => {
+     fetch(`https://62224954666291106a22d82f.mockapi.io/todo/${item.id}`, {
+       method: 'PUT',
+       headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json'
+       },
+       body: JSON.stringify(item)
+     })
+
+   }
+
    
 
-    return { data, loading: isLoading, deleteData, fetchData }
+    return { data, loading: isLoading, deleteData, postData, putData }
 
 }

@@ -1,35 +1,38 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+/* eslint-disable  @typescript-eslint/no-unused-vars */
+/* eslint-disable  react-hooks/exhaustive-deps */
+
+// import * as React from 'react';
 import React, { useEffect, useState } from "react";
 
-// Types
+// types
 import { ListItemType } from "../../types/ListItem.type";
 
+// API
+import useApi from "../../services/useApi";
+
 // Components
-import Header from "./Header";
-import InputArea from "./InputArea";
-import ListArea from "./ListArea";
-import InfoArea from "./InfoArea";
-
-// images
-import TodoImage from "./TodoImage";
+import Header from "../../pages/Todo/Header";
+import InputArea from "../../pages/Todo/InputArea";
+import ListArea from "../../pages/Todo/ListArea";
+import InfoArea from "../../pages/Todo/InfoArea";
+import TodoImage from "../../pages/Todo/TodoImage";
 
 
-const Todo: React.FC = () => {
-  
+
+const TodoContainer = (): any => {
+  const { data, loading, deleteData, postData, putData } = useApi();
   const [taskList, setTaskList] = useState<ListItemType[]>([]);
 
+  // show data of fetch
   useEffect(() => {
-    const dataLocalStorage = localStorage.getItem("listTask");
-    if (dataLocalStorage !== null) {
-      const data = JSON.parse(dataLocalStorage);
-      setTaskList(data);
-    }
-  }, []);
+    !loading && setTaskList(data)
+  }, [loading, data])
 
-  // LocalStorage Management
-  const updateLocalStorage = () => {
-    localStorage.setItem("listTask", JSON.stringify(taskList));
-  };
-  useEffect(updateLocalStorage, [taskList]);
+
+  // Helper
+  const findIndexById = (array: ListItemType[], id: string) =>
+    array.findIndex((item) => item.id === id);
 
   // Handlers
   const handleAddTask = (text: string) => {
@@ -40,17 +43,21 @@ const Todo: React.FC = () => {
     };
 
     setTaskList((prevTasks) => [...prevTasks, newTask]);
+    postData(newTask)
   };
-
-  const findIndexById = (array: ListItemType[], id: string) =>
-    array.findIndex((item) => item.id === id);
 
   const handleChangeTask = (id: string, done: boolean) => {
     const newList = [...taskList];
     const index = findIndexById(newList, id);
-    newList[index].done = done;
-    // newList[findIndexById(newList, id)].done = done
+
+    const newItem = {
+      ...newList[index],
+      done: done
+    }
+
+    newList[index] = newItem
     setTaskList(newList);
+    putData(newItem)
   };
 
   const handleRemoveTask = (id: string) => {
@@ -58,12 +65,11 @@ const Todo: React.FC = () => {
     const index = findIndexById(newList, id);
     newList.splice(index, 1);
     setTaskList(newList);
+    deleteData(id)
   };
 
-
   return (
-    <div style={{position:'relative', minHeight:'100vh'}}>
-
+    <>
       <Header />
       <InputArea onAddTask={handleAddTask} />
       <InfoArea taskList={taskList} />
@@ -72,10 +78,11 @@ const Todo: React.FC = () => {
         onTaskChange={handleChangeTask}
         taskList={taskList}
       />
-      
-      <TodoImage/>
-    </div>
+
+      <TodoImage />
+    </>
   );
+
 };
 
-export default Todo;
+export default TodoContainer;

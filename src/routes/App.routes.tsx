@@ -3,7 +3,8 @@ import { Navigate, Route, Routes } from "react-router";
 import * as React from "react";
 
 import Auth from "../pages/Auth";
-import Todo from "../pages/Todo";
+// import Todo from "../pages/Todo";
+import TodoContainer from "../container/TodoContainer";
 import NotFound from "../pages/NotFound";
 import NotAuthorized from "../pages/NotAuthorized";
 import { BrowserRouter } from "react-router-dom";
@@ -29,7 +30,7 @@ export const AuthenticatedRoutes = (): any => {
       <Routes>
         <Route path="/" element={<Navigate to='/todo' />} />
         <Route path="/auth" element={<Navigate to="/" />} />
-        <Route path="/todo" element={<Todo />} />
+        <Route path="/todo" element={<TodoContainer />} />
         <Route path="/not-authorized" element={<NotAuthorized />} />
         <Route path="/not-found" element={<NotFound />} />
         <Route path='*' element={<Navigate to='/not-found' /> }/>
