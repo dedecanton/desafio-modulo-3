@@ -1,18 +1,20 @@
 /* eslint-disable  @typescript-eslint/explicit-module-boundary-types */
-import * as React from 'react';
-import * as C from "./InfoArea.style";
+import * as React from "react";
+import { addStyle } from "./InfoArea.style";
 import { ListItemType } from "../../../types/ListItem.type";
+
+import Container from "../../../components/Container";
 
 type Props = {
   taskList: ListItemType[];
 };
 
 const InfoArea = ({ taskList }: Props) => {
+  const taskListFilter = (state: boolean) =>
+    taskList.filter((task) => task.done === state).length;
 
-  const taskListFilter = (state:boolean) => taskList.filter((task) => task.done === state).length;
-    
   return (
-    <C.Container>
+    <Container  addStyle={addStyle}>
       <table>
         <thead>
           <tr>
@@ -28,7 +30,7 @@ const InfoArea = ({ taskList }: Props) => {
           </tr>
         </tbody>
       </table>
-    </C.Container>
+    </Container>
   );
 };
 

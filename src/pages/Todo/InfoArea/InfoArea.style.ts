@@ -1,7 +1,5 @@
-import styled from "styled-components";
-import ContainerStyle from "../UI/Container";
 
-export const Container = styled(ContainerStyle)`
+export const addStyle = `
   max-width: 300px;
   width: 80%;
   background-color: #4abdac;
