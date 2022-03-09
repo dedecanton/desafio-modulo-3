@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import * as React from "react";
 import InputArea from "../../pages/Auth/InputArea";
 
-const onLogin = jest.fn();
+const onLogin = jest.fn(e => e.preventDefault());
 const onChangeEmail = jest.fn();
 const onChangePassword = jest.fn();
 
