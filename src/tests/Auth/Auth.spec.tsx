@@ -43,4 +43,10 @@ describe("Auth tests", () => {
     expect(onLogin).toBeCalledTimes(1)
 })
 
+test('submit without data', () => {
+  const button = screen.getByText('Entrar')
+  userEvent.click(button)
+  
+})
+
 });

@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React, {useRef} from "react";
 
 import { Title, Form, InputGroup, Label, InputAreaContainer, Input } from "./InputArea.style";
@@ -19,11 +20,11 @@ const InputArea = ({onLogin, onChangeEmail, onChangePassword}:InputAreaProps):an
     const passwordTyped = useRef<HTMLInputElement>(null);
 
     function changeEmail(){
-        onChangeEmail(emailTyped.current?.value || '')
+        onChangeEmail(emailTyped.current!.value)
     }
     
     function changePassword(){
-        onChangePassword(passwordTyped.current?.value || '')
+        onChangePassword(passwordTyped.current!.value)
     }
 
 
