@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useState } from "react"
 import { ListItemType } from "../types/ListItem.type";
 
-const URL = 'https://62224954666291106a22d82f.mockapi.io/todo'
+const URL = '/api/todo'
 
 
 export default function useApi ():any{
@@ -10,8 +10,8 @@ export default function useApi ():any{
    const [data, setData] = useState<any[]>([])
    const [isLoading, setIsLoading] = useState(false);
    
-
    const fetchData = useCallback(async () => {
+     console.log(URL)
      setIsLoading(true)
 
      try{
@@ -37,11 +37,11 @@ export default function useApi ():any{
 
 
    const deleteData = (id:string) => {
-     fetch(`https://62224954666291106a22d82f.mockapi.io/todo/${id}`, {method:'DELETE'})
+     fetch(`${URL}/${id}`, {method:'DELETE'})
    }
 
    const postData = (item: ListItemType) => {
-     fetch('https://62224954666291106a22d82f.mockapi.io/todo/', {
+     fetch(URL, {
        method: 'POST',
        headers: {
          'Accept': 'application/json',
@@ -52,7 +52,7 @@ export default function useApi ():any{
    }
 
    const putData = (item:ListItemType) => {
-     fetch(`https://62224954666291106a22d82f.mockapi.io/todo/${item.id}`, {
+     fetch(`${URL}/${item.id}`, {
        method: 'PUT',
        headers: {
          'Accept': 'application/json',
