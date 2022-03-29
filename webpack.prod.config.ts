@@ -1,5 +1,4 @@
 import path from "path";
-import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
 import { Configuration } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
