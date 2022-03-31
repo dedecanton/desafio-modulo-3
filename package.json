@@ -69,7 +69,8 @@
     "collectCoverageFrom": [
       "**/pages/**",
       "!**/node_modules/**",
-      "!**/vendor/**"
+      "!**/vendor/**",
+      "!**/pages/**/index.ts"
     ],
     "testMatch": [
       "**/tests/**/*.spec.{js,jsx,ts,tsx}"
