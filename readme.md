@@ -2,7 +2,7 @@
 
 ## **Projeto**
 
-    Neste desafio construi uma aplicação contendo um sistema de autenticação (falso), e uma área restrita onde terá um componente de lista de atividades. As rotas são as seguintes: 
+   Neste desafio construi uma aplicação contendo um sistema de autenticação (falso), e uma área restrita onde terá um componente de lista de atividades. As rotas são as seguintes: 
 
 - `/auth`: Página de autenticação.
 - `/todo`: Pagina inicial para quem está autenticado.
