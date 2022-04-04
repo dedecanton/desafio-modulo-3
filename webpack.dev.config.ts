@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import path from "path";
 import { Configuration, HotModuleReplacementPlugin } from "webpack";
+import {Configuration as WebpackDevConfiguration} from 'webpack-dev-server'
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";

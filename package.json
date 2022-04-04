@@ -4,16 +4,15 @@
   "scripts": {
     "start": "node server/index.js",
     "build": "webpack --config webpack.prod.config.ts",
-    "test": "jest --coverage --watchAll",
-    "server": "node server/index.js"
+    "test": "jest --coverage --watchAll"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.24",
     "axios": "^0.26.1",
     "express": "^4.17.3",
     "http-proxy-middleware": "^2.0.4",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-router-dom": "^6.2.2",
     "regenerator-runtime": "^0.13.9",
     "styled-components": "^5.3.5"
@@ -60,6 +59,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "jest": {
+    "testEnvironment": "jsdom",
     "setupFilesAfterEnv": [
       "<rootDir>/jest-setup.ts"
     ],
@@ -70,7 +70,8 @@
     "collectCoverageFrom": [
       "**/pages/**",
       "!**/node_modules/**",
-      "!**/vendor/**"
+      "!**/vendor/**",
+      "!**/pages/**/index.ts"
     ],
     "testMatch": [
       "**/tests/**/*.spec.{js,jsx,ts,tsx}"
